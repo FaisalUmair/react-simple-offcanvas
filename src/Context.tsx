@@ -22,7 +22,7 @@ function reducer(state: State, action: Action): State {
   }
 }
 
-const randomId = window.crypto.getRandomValues(new Uint32Array(1))[0].toString(36)
+const randomId = typeof window!='undefined' ? window.crypto.getRandomValues(new Uint32Array(1))[0].toString(36) : null
 
 interface ContextProps {
   isOpen?: boolean
